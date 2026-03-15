@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Needleman-Wunsch Visualizer</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <h1>Needleman-Wunsch Visualizer</h1>
+      <p>This study-oriented visualizer was created to make the Needleman-Wunsch algorithm easier to understand, and it is based on and references <a href="https://github.com/drdrsh/Needleman-Wunsch" target="_blank" rel="noopener noreferrer">drdrsh/Needleman-Wunsch</a>. Any input change updates the scoring matrix, backtracking path, and final alignment in real time.</p>
+    </header>
+
+    <div class="layout">
+      <section class="panel">
+        <h2 class="panel-title">Inputs and Results</h2>
+
+        <div class="controls">
+          <div class="control-group full">
+            <label for="seq1">Sequence 1</label>
+            <input id="seq1" type="text" value="GATTACA" autocomplete="off" />
+          </div>
+
+          <div class="control-group full">
+            <label for="seq2">Sequence 2</label>
+            <input id="seq2" type="text" value="GCATGCU" autocomplete="off" />
+          </div>
+
+          <div class="control-group">
+            <label for="match">Match</label>
+            <input id="match" type="number" value="1" step="1" />
+          </div>
+
+          <div class="control-group">
+            <label for="mismatch">Mismatch</label>
+            <input id="mismatch" type="number" value="-1" step="1" />
+          </div>
+
+          <div class="control-group">
+            <label for="gap">Gap</label>
+            <input id="gap" type="number" value="-1" step="1" />
+          </div>
+        </div>
+
+        <div class="matrix-wrap">
+          <table id="matrixTable" aria-label="Needleman-Wunsch scoring matrix"></table>
+        </div>
+
+        <p class="meta-row" id="finalScoreText"></p>
+
+        <section class="result-section">
+          <h3 class="section-title">Final Alignment</h3>
+          <div class="alignment-box" id="alignmentBox"></div>
+        </section>
+
+        <section class="result-section">
+          <h3 class="section-title">Backtracking Path</h3>
+          <div class="path-row" id="pathText"></div>
+          <p class="path-rule">Tie-break rule for one selected traceback path: Diagonal → Up → Left. If multiple directions have the same max score, all are still shown as best-direction arrows in the matrix.</p>
+        </section>
+
+        <p class="hint">Hover or click a matrix cell to highlight diagonal/up/left origin cells and see candidate calculations on the right.</p>
+      </section>
+
+      <aside class="panel detail-panel">
+        <h2 class="panel-title">Cell Details</h2>
+        <div id="cellDetails" class="cell-details">
+          <div class="empty-state">
+            <p>Hover or click a score cell to inspect how that cell is computed.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
