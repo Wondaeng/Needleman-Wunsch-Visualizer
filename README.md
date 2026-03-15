@@ -1,6 +1,7 @@
 # Needleman-Wunsch Visualizer
 
-Interactive web visualizer for the Needleman-Wunsch algorithm.
+Interactive web visualizer for the Needleman-Wunsch algorithm:  
+https://needleman-wunsch-visualizer.vercel.app/
 
 ## Local development
 
