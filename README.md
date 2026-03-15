@@ -8,3 +8,4 @@ This repository is based on [drdrsh’s Needleman-Wunsch repository](https://git
 The main features added in this version are:
 - displaying the intermediate alignments for each cell for all possible cases (diagonal, top, and left)
 - visual enhancements to improve readability
+- fixed minor error reported in [the issue #3 of the original repo](https://github.com/drdrsh/Needleman-Wunsch/issues/3) that the order of sequence in results is swapped.
